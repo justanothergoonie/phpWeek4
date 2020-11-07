@@ -134,4 +134,8 @@ table {
 	border-spacing: 0;
 }
 
+body {
+	display: flex;
+}
+
 /*# sourceMappingURL=main.css.map */
