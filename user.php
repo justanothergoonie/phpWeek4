@@ -7,7 +7,7 @@ class User
 	private $db_name = 'example';
 	private $error = '';
 	private $dsn = '';	
-
+	// private $current_user = $_SESSION['user'];
 	private function get_dbh(){
 		return new PDO($this->dsn, $this->db_user, $this->db_pass);
 	}
@@ -139,7 +139,13 @@ class User
 			print_r('uh-oh!' . $e->getMessage() . '<br />');
 		}
 	}
-
+	function do_confirm_delete(){
+		$current_user = $_SESSION['user'];
+		$dbh = $this->get_dbh();
+		$sql_delete_user = 'DELETE FROM users WHERE username = :user';
+		$delete_stmt = $dbh->prepare($sql_delete_user);
+		$delete_stmt->execute(['user' => $current_user['username']]);
+	}
 	public function doSomething()
 	{
 		echo 'howdy, i am doing something';
