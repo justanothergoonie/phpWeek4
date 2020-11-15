@@ -7,7 +7,7 @@ class User
 	private $db_name = 'example';
 	private $error = '';
 	private $dsn = '';	
-	// private $current_user = $_SESSION['user'];
+	// private $current_user = $_SESSION['user']; //Why cant this be done?
 	private function get_dbh(){
 		return new PDO($this->dsn, $this->db_user, $this->db_pass);
 	}
@@ -27,15 +27,7 @@ class User
 		return $this->error;
 	}
 
-	// function  user_check(){
-	// 	$current_user = $_SESSION['user'];
-	// 	$dbh = $this->get_dbh();
-	// 	$sql_user_check =
-	// 		'SELECT username FROM users WHERE username = :user';
-	// 	$id_check_stmt = $dbh->prepare($sql_user_check);
-	// 	$id_check_stmt->execute(['user'=> $current_user['username']]);
-	// 	$user_id_relates = $id_check_stmt->fetch();
-	// }
+
 	function do_login($vars){
 		try {
 			$try_user = $vars['username'];
@@ -65,40 +57,6 @@ class User
 			print_r('uh-oh!' . $e->getMessage() . '<br />');
 		}
 	}
-	// function do_update_account($vars){
-	// 	try{
-	// 		$current_user = $_SESSION['user'];
-	// 		$try_update_username = $vars['username'];
-	// 		$try_update_password = $vars['password'];
-	// 		$try_confirm_update_password = $vars['confirm_password'];
-
-	// 		if ($try_update_password !== $try_confirm_update_password) {
-
-	// 			$this->error = 'pass dont match yo';
-	// 		}
-	// 		if (
-	// 			!empty($try_update_username) &&
-	// 			!empty($try_update_password) &&
-	// 			!empty($try_confirm_update_password)
-	// 		) {
-	// 			$dbh = $this->get_dbh();
-	// 			$sql_id_check =
-	// 			'SELECT id FROM users WHERE username = :user';
-	// 			$id_check_stmt = $dbh->prepare($sql_id_check);
-	// 			$id_check_stmt->execute(['user' => $current_user['username']]);
-	// 			$user_id_relates = $id_check_stmt->fetch();
-	// 			if ($user_id_relates) {
-	// 				$sql_update_user = 'UPDATE users SET username = :user, password = :pass WHERE id = :existing_user_id';
-	// 				$update_stmt = $dbh->prepare($sql_update_user);
-	// 				$update_stmt->execute(['user' => $try_update_username, 'pass' => $try_update_password, 'existing_user_id' => $user_id_relates['id']]);
-	// 			}  else {
-	// 				$this->error='not working';
-	// 			}
-	// 		}
-	// 	} catch (PDOException $e) {
-	// 		print_r('uh-oh!' . $e->getMessage() . '<br />');
-	// 	}
-	// }
 	function do_update_account($vars)
 	{
 		try {
