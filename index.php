@@ -45,8 +45,9 @@ $user = $_SESSION['user'];
 
 
         ?>
-    <h2>Edit Account</h2>
+
     <form method="post">
+        <h2>Edit Account</h2>
         <input type="hidden" name="_action" value="update_account">
 
         <label>Username</label>
@@ -67,11 +68,15 @@ $user = $_SESSION['user'];
             case 'delete':
                 //show delete code
             ?>
-    <h2>Delete Account</h2>
-    <strong>Are You Sure?</strong>
-    <form method="post">
-        <input type="hidden" name="_action" value="confirm_delete">
-        <button>Yes, Im Sure</button>
+
+    <form method="post" class="delete">
+        <h2>Delete Account</h2>
+
+        <div>
+            <strong>Are You Sure?</strong>
+            <input type="hidden" name="_action" value="confirm_delete">
+            <button>Yes, Im Sure</button>
+        </div>
         <a href="index.php">Cancel</a>
     </form>
     <?php
@@ -100,7 +105,7 @@ $user = $_SESSION['user'];
     <form method="post">
         <input type="hidden" name="_action" value="signup">
         <h2>Create an Account</h2>
-        <br />
+
 
         <label>Create Username</label>
         <input type="text" name="username">

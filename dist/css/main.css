@@ -136,6 +136,37 @@ table {
 
 body {
 	display: flex;
+	flex-direction: column;
+}
+
+body form {
+	padding: 5%;
+}
+
+body form h2 {
+	font-size: 1.5rem;
+}
+
+body form label {
+	margin-right: 1%;
+}
+
+body form input {
+	margin: 0.3rem;
+}
+
+body form strong {
+	font-weight: bold;
+}
+
+body form .delete {
+	display: flex;
+	flex-direction: column;
+}
+
+body form .delete div {
+	display: flex;
+	flex-direction: row;
 }
 
 /*# sourceMappingURL=main.css.map */

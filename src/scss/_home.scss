@@ -1,3 +1,27 @@
 body {
 	display: flex;
+	flex-direction: column;
+	form {
+		padding: 5%;
+		h2 {
+			font-size: 1.5rem;
+		}
+		label {
+			margin-right: 1%;
+		}
+		input {
+			margin: 0.3rem;
+		}
+		strong {
+			font-weight: bold;
+		}
+		.delete {
+			display: flex;
+			flex-direction: column;
+			div {
+				display: flex;
+				flex-direction: row;
+			}
+		}
+	}
 }
