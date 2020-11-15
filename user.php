@@ -90,14 +90,12 @@ class User
 				print_r($user_id_relates['id']);
 				if ($user_id_relates) {
 
-					$sql_update_user = 'UPDATE users SET username = :user AND password = :pass WHERE id = :existing_user_id';
+					$sql_update_user = 'UPDATE users SET username = :user, password = :pass WHERE id = :existing_user_id';
 					$update_stmt = $dbh->prepare($sql_update_user);
 					$update_stmt->execute(['user' => $try_update_username, 'pass' => $try_update_password, 'existing_user_id' => $user_id_relates['id']]);
-					$user_updated = $update_stmt->fetch();
+					
 				} 
-				if ($user_updated) {
-					$this->error = 'working';
-				} else {
+				 else {
 					$this->error='not working';
 				}
 			}
