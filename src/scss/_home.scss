@@ -1,6 +1,12 @@
 body {
 	display: flex;
 	flex-direction: column;
+	h1 {
+		font-size: 2rem;
+	}
+	p {
+		font-size: 1.2rem;
+	}
 	form {
 		padding: 5%;
 		h2 {

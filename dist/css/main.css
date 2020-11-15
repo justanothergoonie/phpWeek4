@@ -139,6 +139,14 @@ body {
 	flex-direction: column;
 }
 
+body h1 {
+	font-size: 2rem;
+}
+
+body p {
+	font-size: 1.2rem;
+}
+
 body form {
 	padding: 5%;
 }

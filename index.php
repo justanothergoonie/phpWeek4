@@ -32,7 +32,7 @@ $user = $_SESSION['user'];
 
     <?php if ($is_logged_in) : ?>
     <em style="color: red;"><?php echo $userManager->errorMessage(); ?></em>
-    <p>Welcome, <?php echo $user['username']; ?>!</p>
+    <h1>Welcome, <?php echo $user['username']; ?>!</h1>
     <p>
         Actions:
         <a href="?_action=edit">Edit Account</a> |
