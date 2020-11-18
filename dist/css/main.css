@@ -141,6 +141,8 @@ body {
 
 body h1 {
 	font-size: 2rem;
+	color: magenta;
+	font-family: 'Comic Neue', cursive;
 }
 
 body p {
