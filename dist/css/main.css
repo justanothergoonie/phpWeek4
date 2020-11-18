@@ -154,7 +154,9 @@ body form {
 }
 
 body form h2 {
-	font-size: 1.5rem;
+	font-size: 2rem;
+	color: magenta;
+	font-family: 'Comic Neue', cursive;
 }
 
 body form label {
